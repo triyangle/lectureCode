@@ -4,7 +4,7 @@ public class ExtraIntListPractice {
       * to change. */
     public static IntList incrList(IntList L, int x) {
         /* Your code here. */
-        return L;        
+        return L;
     }
 
     /** Returns an IntList identical to L, but with
@@ -28,6 +28,6 @@ public class ExtraIntListPractice {
         // run it in the visualizer.
         // System.out.println(L.get(1));
         // System.out.println(incrList(L, 3));
-        // System.out.println(dincrList(L, 3));        
+        // System.out.println(dincrList(L, 3));
     }
 }
