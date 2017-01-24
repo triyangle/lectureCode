@@ -21,7 +21,11 @@ public class ExtraIntListPractice {
       * each element incremented by x. Not allowed to use
       * the 'new' keyword. */
     public static IntList dincrList(IntList L, int x) {
-        /* Your code here. */
+        IntList p = L;
+        while (p.rest != null) {
+            p.first += x;
+            p = p.rest;
+        }
         return L;
     }
 
@@ -50,8 +54,9 @@ public class ExtraIntListPractice {
         // Test your answers by uncommenting. Or copy and paste the
         // code for incrList and dincrList into IntList.java and
         // run it in the visualizer.
-        System.out.println(L.get(1));
-        System.out.println(incrList(L, 3).get(1));
-        // System.out.println(dincrList(L, 3));
+        System.out.println("incrList: " + incrList(L, 3).get(1));
+        System.out.println("L: " + L.get(1));
+        System.out.println("dincrList: " + dincrList(L, 3).get(1));
+        System.out.println("L: " + L.get(1));
     }
 }
