@@ -1,7 +1,7 @@
- /** An SLList is a list of integers, which hides the terrible truth
+ /** An SLListInner is a list of integers, which hides the terrible truth
    * of the nakedness within. */
-public class SLList {   
-    private static class IntNode {
+public class SLListInner {
+    public class IntNode {
         public int item;
         public IntNode next;
 
@@ -9,19 +9,19 @@ public class SLList {
             item = i;
             next = n;
         }
-    } 
+    }
 
     /* The first item (if it exists) is at sentinel.next. */
     private IntNode sentinel;
     private int size;
 
-    /** Creates an empty SLList. */
-    public SLList() {
+    /** Creates an empty SLListInner. */
+    public SLListInner() {
         sentinel = new IntNode(63, null);
         size = 0;
     }
 
-    public SLList(int x) {
+    public SLListInner(int x) {
         sentinel = new IntNode(63, null);
         sentinel.next = new IntNode(x, null);
         size = 1;
@@ -40,7 +40,7 @@ public class SLList {
 
     /** Adds x to the end of the list. */
     public void addLast(int x) {
-        size = size + 1;        
+        size = size + 1;
 
         IntNode p = sentinel;
 
@@ -51,16 +51,25 @@ public class SLList {
 
         p.next = new IntNode(x, null);
     }
-    
+
     /** Returns the size of the list. */
     public int size() {
         return size;
     }
 
-    public static void main(String[] args) {
-        /*Creates a list of one integer, namely 10*/
-        SLList L = new SLList();
+    /* public static void main(String[] args) {
+        [>Creates a list of one integer, namely 10<]
+        SLListInner L = new SLListInner();
         L.addLast(20);
         System.out.println(L.size());
+
+    } */
+}
+
+class Test {
+    public static void main(String[] args) {
+        SLListInner L = new SLListInner();
+        SLListInner.IntNode test = L.new IntNode(3, null);
+        System.out.println(test.item);
     }
 }
