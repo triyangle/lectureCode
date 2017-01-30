@@ -8,7 +8,7 @@ public class SLList {
         }
     }
 
-    private IntNode first; 
+    private IntNode first;
     private int size;
 
     public SLList() {
@@ -25,7 +25,7 @@ public class SLList {
     public void addFirst(int x) {
         first = new IntNode(x, first);
         size += 1;
-    }    
+    }
 
     /** Retrieves the front item from the list. */
     public int getFirst() {
@@ -39,18 +39,25 @@ public class SLList {
 
     /** Adds an item to the end of the list. */
     public void addLast(int x) {
+        size++;
         IntNode p = first;
 
-        /* Advance p to the end of the list. */
-        while (p.next != null) {
-            p = p.next;
+        if (p == null) {
+            first = new IntNode(x, p);
+        } else {
+            /* Advance p to the end of the list. */
+            while (p.next != null) {
+                p = p.next;
+            }
+            p.next = new IntNode(x, null);
         }
-        p.next = new IntNode(x, null);
     }
 
     /** Crashes when you call addLast on an empty SLList. Fix it. */
     public static void main(String[] args) {
         SLList x = new SLList();
         x.addLast(5);
+        System.out.println("First: " + x.getFirst());
+        System.out.println("Size: " + x.size());
     }
 }
