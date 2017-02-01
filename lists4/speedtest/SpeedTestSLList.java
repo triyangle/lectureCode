@@ -7,4 +7,4 @@ public class SpeedTestSLList {
 			i = i + 1;
 		}
 	}
-} 
+}

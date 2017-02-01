@@ -60,4 +60,4 @@ public class AList {
         size = size - 1;
         return x;
     }
-} 
+}

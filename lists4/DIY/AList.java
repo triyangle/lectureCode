@@ -13,16 +13,16 @@ public class AList {
 
     /** Returns the item from the back of the list. */
     public int getLast() {
-        return 0;        
+        return 0;
     }
     /** Gets the ith item in the list (0 is the front). */
     public int get(int i) {
-        return 0;        
+        return 0;
     }
 
     /** Returns the number of items in the list. */
     public int size() {
-        return 0;        
+        return 0;
     }
 
     /** Deletes item from back of the list and
@@ -30,4 +30,4 @@ public class AList {
     public int removeLast() {
         return 0;
     }
-} 
+}
