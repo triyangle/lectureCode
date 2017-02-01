@@ -12,12 +12,16 @@ public class AList {
         list = new int[100];
     }
 
+    public void resize(int capacity) {
+        int[] temp = new int[capacity];
+        System.arraycopy(list, 0, temp, 0, size);
+        list = temp;
+    }
+
     /** Inserts X into the back of the list. */
     public void addLast(int x) {
         if (size == list.length) {
-            int[] temp = new int[list.length * 100];
-            System.arraycopy(list, 0, temp, 0, list.length);
-            list = temp;
+            resize(size * 100);
         }
         list[size] = x;
         size++;
