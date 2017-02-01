@@ -14,7 +14,7 @@ public class AList {
 
     /** Inserts X into the back of the list. */
     public void addLast(int x) {
-        if (size >= list.length) {
+        if (size == list.length) {
             int[] temp = new int[list.length * 100];
             System.arraycopy(list, 0, temp, 0, list.length);
             list = temp;
