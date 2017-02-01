@@ -21,7 +21,7 @@ public class AList {
     /** Inserts X into the back of the list. */
     public void addLast(int x) {
         if (size == list.length) {
-            resize(size * 100);
+            resize(size * 2);
         }
         list[size] = x;
         size++;
