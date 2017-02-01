@@ -71,6 +71,10 @@ public class AListTest {
     }
 
     public static void main(String[] args) {
+        AList test = new AList();
+        System.out.println(test.size());
+        // int instance variables default to 0
+
         jh61b.junit.TestRunner.runTests("all", AListTest.class);
     }
 }
