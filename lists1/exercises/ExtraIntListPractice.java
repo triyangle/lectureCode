@@ -4,17 +4,24 @@ public class ExtraIntListPractice {
       * to change. */
     public static IntList incrList(IntList L, int x) {
 
-        // O(n^2) complexity
         IntList incremented = new IntList(L.first + x, null);
-        for (int i = 1; i < L.iterativeSize(); i++) {
-            incremented = new IntList(L.forIterativeGet(i) + x, incremented);
+        IntList current = incremented;
+        L = L.rest;
+
+        while (L != null) {
+            current.rest = new IntList(L.first + x, null);
+            current = current.rest;
+            L = L.rest;
         }
 
-        /* while (p.rest != null) {
-            incremented = new IntList(p.rest.first + x, incremented);
-            p = p.rest;
-        } */
         return incremented;
+    }
+
+    public static IntList incrListRecursive(IntList L, int x) {
+        if (L == null) {
+            return L;
+        }
+        return new IntList(L.first + x, incrListRecursive(L.rest, x));
     }
 
     /** Returns an IntList identical to L, but with
@@ -26,6 +33,15 @@ public class ExtraIntListPractice {
             p.first += x;
             p = p.rest;
         }
+        return L;
+    }
+
+    public static IntList dincrListRecursive(IntList L, int x) {
+        if (L == null) {
+            return L;
+        }
+        L.first += x;
+        dincrListRecursive(L.rest, x);
         return L;
     }
 
@@ -57,6 +73,11 @@ public class ExtraIntListPractice {
         System.out.println("incrList: " + incrList(L, 3).get(1));
         System.out.println("L: " + L.get(1));
         System.out.println("dincrList: " + dincrList(L, 3).get(1));
+        System.out.println("L: " + L.get(1));
+        System.out.println();
+        System.out.println("incrListRecursive: " + incrListRecursive(L, 3).get(1));
+        System.out.println("L: " + L.get(1));
+        System.out.println("dincrListRecursive: " + dincrListRecursive(L, 3).get(1));
         System.out.println("L: " + L.get(1));
     }
 }

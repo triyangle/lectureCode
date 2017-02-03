@@ -7,7 +7,7 @@ public class ExtraIntListPractice {
             return L;
         }
         IntList incr = new IntList(L.first + x, incrList(L.rest, x));
-        return incr;      
+        return incr;
     }
 
     /** Returns an IntList identical to L, but with
@@ -38,6 +38,6 @@ public class ExtraIntListPractice {
         while(L != null) {
           System.out.println(L.first);
           L = L.rest;
-        }       
+        }
     }
 }
