@@ -46,7 +46,7 @@ public class SLList<Blorp> implements List61B<Blorp> {
 
         Node p = sentinel;
 
-        /* Move p until it reaches the end. */
+		/* Move p until it reaches the end. */
         while (p.next != null) {
             p = p.next;
         }
@@ -58,7 +58,7 @@ public class SLList<Blorp> implements List61B<Blorp> {
     private Node getLastNode() {
         Node p = sentinel;
 
-        /* Move p until it reaches the end. */
+		/* Move p until it reaches the end. */
         while (p.next != null) {
             p = p.next;
         }
@@ -78,6 +78,7 @@ public class SLList<Blorp> implements List61B<Blorp> {
             return null;
         }
 
+        size = size - 1;
         Node p = sentinel;
 
         while (p.next != back) {
@@ -106,7 +107,7 @@ public class SLList<Blorp> implements List61B<Blorp> {
     }
 
     /** Inserts item into given position.
-      * Code from discussion #3 */
+     * Code from discussion #3 */
     public void insert(Blorp item, int position) {
         if (sentinel.next == null || position == 0) {
             addFirst(item);
@@ -121,14 +122,8 @@ public class SLList<Blorp> implements List61B<Blorp> {
 
         Node newNode = new Node(item, currentNode.next);
         currentNode.next = newNode;
-    }    
-
+    }
 
     /** TODO: Add a print method that overrides List61B's inefficient print method. */
-    @Override
-    public void print() {
-        for (Node p = sentinel.next; p != null; p = p.next) {
-            System.out.print(p.item + " ");
-        }
-    }
-}
+
+} 

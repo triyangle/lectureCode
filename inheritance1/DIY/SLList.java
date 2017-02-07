@@ -1,7 +1,7 @@
 /* Represent a list of stuff, where all the "list" work is delegated
  * to a naked recursive data structure. */
 
-public class SLList<Blorp>{
+public class SLList<Blorp> implements List61B<Blorp>{
     public class Node {
         public Blorp item;     /* Equivalent of first */
         public Node next; /* Equivalent of rest */
@@ -78,6 +78,7 @@ public class SLList<Blorp>{
             return null;
         }
 
+        size = size - 1;
         Node p = sentinel;
 
         while (p.next != back) {
@@ -106,7 +107,7 @@ public class SLList<Blorp>{
     }
 
     /** Inserts item into given position.
-      * Code from discussion #3 */
+     * Code from discussion #3 */
     public void insert(Blorp item, int position) {
         if (sentinel.next == null || position == 0) {
             addFirst(item);
