@@ -46,7 +46,7 @@ public class SLList<Blorp> implements List61B<Blorp> {
 
         Node p = sentinel;
 
-		/* Move p until it reaches the end. */
+        /* Move p until it reaches the end. */
         while (p.next != null) {
             p = p.next;
         }
@@ -58,7 +58,7 @@ public class SLList<Blorp> implements List61B<Blorp> {
     private Node getLastNode() {
         Node p = sentinel;
 
-		/* Move p until it reaches the end. */
+        /* Move p until it reaches the end. */
         while (p.next != null) {
             p = p.next;
         }
@@ -126,4 +126,4 @@ public class SLList<Blorp> implements List61B<Blorp> {
 
     /** TODO: Add a print method that overrides List61B's inefficient print method. */
 
-} 
+}

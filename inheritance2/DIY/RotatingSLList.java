@@ -15,4 +15,4 @@ public class RotatingSLList<Item> {
 		rsl.rotateRight();
 		rsl.print();
 	}
-} 
+}
