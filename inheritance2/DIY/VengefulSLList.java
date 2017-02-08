@@ -1,8 +1,21 @@
 /** SList with additional operation printLostItems() which prints all items
   * that have ever been deleted. */
-public class VengefulSLList<Item> {
+public class VengefulSLList<Item> extends SLList<Item> {
+
+    private SLList<Item> deletedItems = new SLList<>();
+
+    @Override
+    public Item removeLast() {
+        Item last = super.removeLast();
+        deletedItems.addFirst(last);
+        return last;
+    }
+
+    public void printLostItems() {
+        deletedItems.print();
+    }
+
     public static void main(String[] args) {
-        /*
         VengefulSLList<Integer> vs1 = new VengefulSLList<Integer>();
         vs1.addLast(1);
         vs1.addLast(5);
@@ -16,6 +29,6 @@ public class VengefulSLList<Item> {
 
         // Should print out the numbers of the fallen, namely 10 and 13.
         System.out.print("The fallen are: ");
-        vs1.printLostItems(); */
+        vs1.printLostItems();
     }
 }

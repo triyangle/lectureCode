@@ -124,5 +124,12 @@ public class SLList<Blorp>{
     }
 
     /** TODO: Add a print method that overrides List61B's inefficient print method. */
-
+    public void print() {
+        Node current = sentinel.next;
+        while (current.next != null) {
+            System.out.print(current.item + " ");
+            current = current.next;
+        }
+        System.out.println(current.item);
+    }
 }
