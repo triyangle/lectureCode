@@ -57,6 +57,15 @@ public class IntList {
         return p.first;
     }
 
+    public void printList() {
+        IntList current = this;
+        while (current.rest != null) {
+            System.out.print(current.first + " ");
+            current = current.rest;
+        }
+        System.out.println(current.first + " ");
+    }
+
     public static void main(String[] args) {
         IntList L = new IntList(15, null);
         L = new IntList(10, L);

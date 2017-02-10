@@ -45,18 +45,47 @@ public class ExtraIntListPractice {
         return L;
     }
 
-    public static IntList recursiveReverse(IntList L) {
+    public static IntList dRecursiveReverse(IntList L) {
         if (L == null || L.rest == null) {
             return L;
         }
-        IntList newHead = recursiveReverse(L.rest);
+        IntList newHead = dRecursiveReverse(L.rest);
         L.rest.rest = L;
         L.rest = null;
         return newHead;
     }
 
+    public static IntList recursiveReverse(IntList L) {
+        return helperRecursiveReverse(L, null);
+    }
+
+    public static IntList helperRecursiveReverse(IntList L, IntList reversed) {
+        if (L == null) {
+            return reversed;
+        }
+        return helperRecursiveReverse(L.rest, new IntList(L.first, reversed));
+    }
+
+    public static IntList dIterativeReverse(IntList L) {
+        IntList reversed = null;
+        IntList current = L;
+        while (current != null) {
+            L = current;
+            current = current.rest;
+            L.rest = reversed;
+            reversed = L;
+        }
+        return reversed;
+    }
+
     public static IntList iterativeReverse(IntList L) {
-        return null;
+        IntList reversed = new IntList(L.first, null);
+        L = L.rest;
+        while (L != null) {
+            reversed = new IntList(L.first, reversed);
+            L = L.rest;
+        }
+        return reversed;
     }
 
     public static void main(String[] args) {
@@ -79,5 +108,21 @@ public class ExtraIntListPractice {
         System.out.println("L: " + L.get(1));
         System.out.println("dincrListRecursive: " + dincrListRecursive(L, 3).get(1));
         System.out.println("L: " + L.get(1));
+
+        System.out.println();
+        L.printList();
+        System.out.println();
+
+        IntList recursiveReversed = recursiveReverse(L);
+        recursiveReversed.printList();
+
+        IntList iterativeReversed = iterativeReverse(L);
+        iterativeReversed.printList();
+
+        IntList recursiveUnreversed = dRecursiveReverse(recursiveReversed);
+        recursiveUnreversed.printList();
+
+        IntList iterativeUnreversed = dIterativeReverse(iterativeReversed);
+        iterativeUnreversed.printList();
     }
 }
