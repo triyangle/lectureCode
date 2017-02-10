@@ -28,10 +28,16 @@ public class IntList {
 
     /** Returns the ith value in this list.*/
     public int get(int i) {
+        if (i > size()) {
+            throw new IndexOutOfBoundsException();
+        }
         return (i == 0) ? first : rest.get(i - 1);
     }
 
     public int whileIterativeGet(int i) {
+        if (i > iterativeSize()) {
+            throw new IndexOutOfBoundsException();
+        }
         IntList p = this;
         while (i > 0) {
             p = p.rest;
@@ -41,9 +47,12 @@ public class IntList {
     }
 
     public int forIterativeGet(int i) {
-        IntList p = this;
-        for (int index = i; index > 0; index--) {
-            p = p.rest;
+        if (i > iterativeSize()) {
+            throw new IndexOutOfBoundsException();
+        }
+        int index;
+        IntList p;
+        for (p = this, index = i; index > 0; index--, p = p.rest) {
         }
         return p.first;
     }
