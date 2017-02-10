@@ -1,10 +1,24 @@
 public class SLList {
-    public class IntNode {
+    public static class IntNode {
         public int item;
         public IntNode next;
         public IntNode(int i, IntNode n) {
             item = i;
             next = n;
+        }
+
+        public void addFirst(int x) {
+            next = new IntNode(item, next);
+            item = x;
+        }
+
+        public void printList() {
+            IntNode p = this;
+            while (p.next != null) {
+                System.out.print(p.item + " ");
+                p = p.next;
+            }
+            System.out.println(p.item);
         }
     }
 
@@ -50,6 +64,13 @@ public class SLList {
         L.addFirst(5);
         L.addLast(20);
         System.out.println(L.size());
-    }
 
+        SLList.IntNode test = new SLList.IntNode(5, null);
+        test.addFirst(4);
+        test.addFirst(3);
+        test.addFirst(2);
+        test.addFirst(1);
+        test.addFirst(0);
+        test.printList();
+    }
 }
