@@ -13,7 +13,7 @@ public class DemoCollections {
 
 	public static List<String> getWords(String inputFilename) {
 		In in = new In(inputFilename);
-		
+
 		List<String> w = new ArrayList<String>();
 		while (!in.isEmpty()) {
 			String rawString = in.readString();
@@ -54,4 +54,4 @@ public static Set<String> findUniqueWords(List<String> words) {
 		targets.add("babylon");
 		System.out.println(findWordCount(w, targets));
 	}
-} 
+}

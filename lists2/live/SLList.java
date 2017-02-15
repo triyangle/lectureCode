@@ -1,6 +1,6 @@
- /** An SLList is a list of integers, which hides the terrible truth
+ /** an SLList is a list of integers, which hides the terrible truth
    * of the nakedness within. */
-public class SLList {   
+public class SLList {
     private static class IntNode {
         public int item;
         public IntNode next;
@@ -9,7 +9,7 @@ public class SLList {
             item = i;
             next = n;
         }
-    } 
+    }
 
     /* The first item (if it exists) is at sentinel.next. */
     private IntNode sentinel;
@@ -40,7 +40,7 @@ public class SLList {
 
     /** Adds x to the end of the list. */
     public void addLast(int x) {
-        size = size + 1;        
+        size = size + 1;
 
         IntNode p = sentinel;
 
@@ -51,7 +51,7 @@ public class SLList {
 
         p.next = new IntNode(x, null);
     }
-    
+
     /** Returns the size of the list. */
     public int size() {
         return size;

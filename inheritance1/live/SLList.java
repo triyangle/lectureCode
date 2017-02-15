@@ -121,7 +121,7 @@ public class SLList<Blorp> implements List61B<Blorp> {
 
         Node newNode = new Node(item, currentNode.next);
         currentNode.next = newNode;
-    }    
+    }
 
 
     /** TODO: Add a print method that overrides List61B's inefficient print method. */
