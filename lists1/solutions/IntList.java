@@ -1,4 +1,4 @@
-pUBLIC class IntList {
+public class IntList {
 	public int first;
 	public IntList rest;
 

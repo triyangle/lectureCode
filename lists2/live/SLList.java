@@ -1,4 +1,4 @@
- /** an SLList is a list of integers, which hides the terrible truth
+ /** An SLList is a list of integers, which hides the terrible truth
    * of the nakedness within. */
 public class SLList {
     private static class IntNode {
