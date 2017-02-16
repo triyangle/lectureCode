@@ -35,5 +35,5 @@ public class MapHelper {
         /*String actual = MapHelper.maxKey(m);
         String expected = "house";
         assertEquals(expected, actual);*/
-    }    
+    }
 }
