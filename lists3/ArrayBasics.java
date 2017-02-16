@@ -18,7 +18,7 @@ public class ArrayBasics {
         s[4] = "ketchup";
         s[x[3] - x[1]] = "muffins";
 
-        int[] b = {9, 10, 11}; 
+        int[] b = {9, 10, 11};
         System.arraycopy(b, 0, x, 3, 2);
     }
 }

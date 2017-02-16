@@ -20,9 +20,9 @@ public class ArrayBasics2 {
 
         int[][] matrix;
         matrix = new int[4][];
-        matrix = new int[4][4]; 
+        matrix = new int[4][4];
 
-        int[][] pascalAgain = new int[][]{{1}, {1, 1}, 
+        int[][] pascalAgain = new int[][]{{1}, {1, 1},
         {1, 2, 1}, {1, 3, 3, 1}};
     }
-} 
+}
