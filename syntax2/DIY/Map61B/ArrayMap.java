@@ -1,9 +1,10 @@
-package Map61B;
+// package Map61B;
 
 import org.junit.Assert.*;
 import java.util.List;
 import java.util.ArrayList;
 import org.junit.Test;
+import java.util.Iterator;
 
 
 import static org.junit.Assert.*;
@@ -11,15 +12,38 @@ import static org.junit.Assert.*;
 /**
  * An array based implementation of the Map61B class.
  */
-public class ArrayMap<K, V> implements Map61B<K, V> {
+public class ArrayMap<K, V> implements Map61B<K, V>, Iterable<K> {
     private K[] keys;
     private V[] values;
     int size;
+
+    public class KeyIterator implements Iterator<K> {
+
+        private int position;
+
+        @Override
+        public boolean hasNext() {
+            return position < size;
+        }
+
+        @Override
+        public K next() {
+            K next = keys[position];
+            position++;
+            return next;
+        }
+    }
 
     public ArrayMap() {
         keys = (K[]) new Object[100];
         values = (V[]) new Object[100];
         size = 0;
+    }
+
+    @Override
+    public Iterator<K> iterator() {
+        // return keys().iterator();
+        return new KeyIterator();
     }
 
     /** Returns the index of the given key if it exists,

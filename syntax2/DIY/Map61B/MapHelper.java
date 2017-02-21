@@ -1,4 +1,4 @@
-package Map61B;
+// package Map61B;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
@@ -52,5 +52,5 @@ public class MapHelper {
         String actual = MapHelper.maxKey(m);
         String expected = "house";
         assertEquals(expected, actual);
-    }    
+    }
 }
